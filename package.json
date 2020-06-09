@@ -1,0 +1,83 @@
+{
+    "name": "evil-edamagit",
+    "displayName": "evil-edamagit",
+    "description": "Vim keybindings for edamagit",
+    "version": "0.0.1",
+    "publisher": "kahole",
+    "author": {
+      "name": "Kristian Andersen Hole"
+    },
+    "engines": {
+        "vscode": "^1.42.1"
+    },
+    "categories": [
+        "Extension Packs"
+    ],
+    "extensionPack": [ 
+        "kahole.magit"
+    ],
+    "contributes": {
+        "keybindings": [
+          {
+            "key": "tab",
+            "command": "extension.vim_tab",
+            "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && !editorLangId == 'magit'"
+          },
+          {
+            "key": "tab",
+            "command": "-extension.vim_tab",
+            "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+          },
+          {
+            "key": "x",
+            "command": "magit.discard-at-point",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "k",
+            "command": "-magit.discard-at-point",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "-",
+            "command": "magit.reverse-at-point",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "v",
+            "command": "-magit.reverse-at-point",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "shift+-",
+            "command": "magit.reverting",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "shift+v",
+            "command": "-magit.reverting",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "shift+o",
+            "command": "magit.resetting",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "shift+x",
+            "command": "-magit.resetting",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "x",
+            "command": "-magit.reset-mixed",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          },
+          {
+            "key": "ctrl+u x",
+            "command": "-magit.reset-hard",
+            "when": "editorTextFocus && editorLangId == 'magit' && !inDebugRepl && vim.mode != 'SearchInProgressMode'"
+          }
+        ]
+    }
+}
